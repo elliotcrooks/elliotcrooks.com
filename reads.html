@@ -39,9 +39,9 @@ body{background:var(--iv);color:var(--pr);font-family:var(--fb);overflow-x:hidde
   #curR.h{width:52px;height:52px;border-color:var(--cr)}
 }
 nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.5rem,4vw,3.5rem);background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
-.nlogo{font-family:var(--fm);font-size:clamp(0.5rem,0.7vw,0.63rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
+.nlogo{font-family:var(--fm);font-size:clamp(0.68rem,0.95vw,0.84rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
 .nlinks{display:flex;gap:2.5rem;list-style:none;align-items:center}
-.nlinks a{font-family:var(--fm);font-size:clamp(0.46rem,0.65vw,0.58rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
+.nlinks a{font-family:var(--fm);font-size:clamp(0.62rem,0.85vw,0.75rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
 .nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--cr);transition:width .3s}
 .nlinks a:hover{opacity:1}.nlinks a:hover::after{width:100%}
 .nlinks .reads-link{opacity:.9;color:var(--st)}
@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content
 .drawer a{font-family:var(--fd);font-size:clamp(2.2rem,7vw,3.5rem);color:var(--iv);text-decoration:none;font-style:italic;opacity:.6;transition:opacity .2s,color .2s}
 .drawer a:hover,.drawer a:active{opacity:1;color:var(--st)}
 .drawer-foot{position:absolute;bottom:2rem;font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.18em;text-transform:uppercase;color:var(--iv);opacity:.2}
-.hero{height:clamp(320px,42svh,520px);background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+.hero{height:clamp(420px,52svh,600px);background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(5rem,8vw,8rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
 #eegCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:.55}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(102,155,188,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(102,155,188,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
 .vrule{position:absolute;top:0;left:clamp(1.5rem,4vw,4rem);width:1px;height:100%;background:linear-gradient(to bottom,transparent,var(--cr) 25%,var(--cr) 75%,transparent);opacity:.4}
@@ -123,6 +123,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content
 .card-sep{width:1px;height:.55rem;background:rgba(0,48,73,.2);flex-shrink:0}
 .card-date{font-family:var(--fm);font-size:clamp(0.32rem,0.46vw,0.42rem);letter-spacing:.12em;color:var(--pr);opacity:.32}
 .card-cat{font-family:var(--fm);font-size:clamp(0.3rem,0.44vw,0.4rem);letter-spacing:.12em;text-transform:uppercase;color:var(--iv);background:var(--cr);padding:.15rem .48rem;margin-left:auto;flex-shrink:0}
+.card-topic{font-family:var(--fm);font-size:clamp(0.3rem,0.42vw,0.38rem);letter-spacing:.1em;text-transform:uppercase;color:var(--sa);display:inline-block;margin-bottom:.55rem}
 .card-title{font-family:var(--fd);font-size:clamp(1rem,1.45vw,1.2rem);color:var(--pr);line-height:1.3;margin-bottom:.65rem;font-weight:400}
 .card-desc{font-family:var(--fb);font-size:clamp(0.88rem,1.1vw,1rem);color:var(--pr);opacity:.48;line-height:1.72;font-weight:300}
 .card-notes{font-family:var(--fb);font-size:clamp(0.85rem,1.05vw,0.95rem);color:var(--pr);opacity:.6;line-height:1.72;font-style:italic;margin-top:.9rem;padding-top:.9rem;border-top:1px solid rgba(0,48,73,.08)}
@@ -226,23 +227,26 @@ footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justi
       <div class="form-row-2">
         <div class="form-group">
           <label class="form-label" for="entrySource">Source / Author</label>
-          <input type="text" class="form-input" id="entrySource" placeholder="The Atlantic, PubMed…">
+          <input type="text" class="form-input" id="entrySource" placeholder="The Atlantic, PubMed, Spotify…">
         </div>
         <div class="form-group">
-          <label class="form-label" for="entryCat">Category</label>
+          <label class="form-label" for="entryCat">Format</label>
           <select class="form-select" id="entryCat">
-            <option value="Psychiatry">Psychiatry</option>
-            <option value="Neuroscience">Neuroscience</option>
-            <option value="Medicine">Medicine</option>
-            <option value="Philosophy">Philosophy</option>
-            <option value="Science">Science</option>
-            <option value="Culture">Culture</option>
-            <option value="Literature">Literature</option>
-            <option value="Theory">Theory</option>
-            <option value="Tech">Tech</option>
+            <option value="Scientific Article">Scientific Article</option>
+            <option value="News Article">News Article</option>
+            <option value="Book">Book</option>
+            <option value="Essay">Essay</option>
+            <option value="Podcast">Podcast</option>
+            <option value="Video">Video</option>
+            <option value="Film">Film</option>
+            <option value="Music">Music</option>
             <option value="Other">Other</option>
           </select>
         </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="entryTopic">Topic / Domain</label>
+        <input type="text" class="form-input" id="entryTopic" placeholder="Psychiatry, neuroscience, culture, philosophy…">
       </div>
       <div class="form-group">
         <label class="form-label" for="entryNotes">Personal notes</label>
@@ -257,15 +261,14 @@ footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justi
   </div>
   <div class="filter-bar" id="filterBar">
     <button class="filter-btn active" data-cat="All">All</button>
-    <button class="filter-btn" data-cat="Psychiatry">Psychiatry</button>
-    <button class="filter-btn" data-cat="Neuroscience">Neuroscience</button>
-    <button class="filter-btn" data-cat="Medicine">Medicine</button>
-    <button class="filter-btn" data-cat="Philosophy">Philosophy</button>
-    <button class="filter-btn" data-cat="Science">Science</button>
-    <button class="filter-btn" data-cat="Culture">Culture</button>
-    <button class="filter-btn" data-cat="Literature">Literature</button>
-    <button class="filter-btn" data-cat="Theory">Theory</button>
-    <button class="filter-btn" data-cat="Tech">Tech</button>
+    <button class="filter-btn" data-cat="Scientific Article">Article</button>
+    <button class="filter-btn" data-cat="News Article">News</button>
+    <button class="filter-btn" data-cat="Book">Book</button>
+    <button class="filter-btn" data-cat="Essay">Essay</button>
+    <button class="filter-btn" data-cat="Podcast">Podcast</button>
+    <button class="filter-btn" data-cat="Video">Video</button>
+    <button class="filter-btn" data-cat="Film">Film</button>
+    <button class="filter-btn" data-cat="Music">Music</button>
     <button class="filter-btn" data-cat="Other">Other</button>
   </div>
   <div class="reads-count" id="readsCount"></div>
@@ -305,11 +308,26 @@ const STORE_KEY='ec_reads_v2';
 function loadEntries(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'[]');}catch{return[];}}
 function saveEntries(arr){localStorage.setItem(STORE_KEY,JSON.stringify(arr));}
 async function fetchMeta(url){
-  const proxy='https://api.allorigins.win/get?url='+encodeURIComponent(url);
-  const res=await fetch(proxy,{signal:AbortSignal.timeout(9000)});
-  if(!res.ok)throw new Error('proxy');
-  const data=await res.json();
-  const doc=new DOMParser().parseFromString(data.contents||'','text/html');
+  const proxies=[
+    u=>'https://api.allorigins.win/get?url='+encodeURIComponent(u),
+    u=>'https://corsproxy.io/?'+encodeURIComponent(u),
+    u=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(u),
+  ];
+  let html='';
+  for(const mkProxy of proxies){
+    try{
+      const proxyUrl=mkProxy(url);
+      const res=await fetch(proxyUrl,{signal:AbortSignal.timeout(8000)});
+      if(!res.ok)continue;
+      // allorigins wraps in {contents:...}, others return raw
+      const ct=res.headers.get('content-type')||'';
+      if(ct.includes('json')){const d=await res.json();html=d.contents||d.data||'';}
+      else{html=await res.text();}
+      if(html&&html.length>200)break;
+    }catch{continue;}
+  }
+  if(!html)throw new Error('all proxies failed');
+  const doc=new DOMParser().parseFromString(html,'text/html');
   function gm(p){const el=doc.querySelector(`meta[property="${p}"],meta[name="${p}"]`);return el?el.getAttribute('content')||'':'';}
   let sn=gm('og:site_name');if(!sn){try{sn=new URL(url).hostname.replace(/^www\./,'');}catch{sn='';}}
   return{title:(gm('og:title')||doc.title||'').trim(),desc:(gm('og:description')||gm('description')||'').trim(),image:(gm('og:image')||'').trim(),siteName:sn.trim()};
@@ -339,11 +357,11 @@ fetchMetaBtn.addEventListener('click',async()=>{
 document.getElementById('submitEntry').addEventListener('click',()=>{
   const title=document.getElementById('entryTitle').value.trim();if(!title){document.getElementById('entryTitle').focus();return;}
   const entries=loadEntries();
-  entries.unshift({id:Date.now(),url:document.getElementById('entryUrl').value.trim(),title,desc:document.getElementById('entryDesc').value.trim(),source:document.getElementById('entrySource').value.trim(),image:pendingThumbUrl,category:document.getElementById('entryCat').value,notes:document.getElementById('entryNotes').value.trim(),date:new Date().toISOString().split('T')[0]});
+  entries.unshift({id:Date.now(),url:document.getElementById('entryUrl').value.trim(),title,desc:document.getElementById('entryDesc').value.trim(),source:document.getElementById('entrySource').value.trim(),image:pendingThumbUrl,category:document.getElementById('entryCat').value,topic:document.getElementById('entryTopic').value.trim(),notes:document.getElementById('entryNotes').value.trim(),date:new Date().toISOString().split('T')[0]});
   saveEntries(entries);renderFeed();resetForm();
   const sm=document.getElementById('successMsg');sm.classList.add('show');setTimeout(()=>sm.classList.remove('show'),2500);
 });
-function resetForm(){['entryUrl','entryTitle','entryDesc','entrySource','entryNotes'].forEach(id=>document.getElementById(id).value='');document.getElementById('entryCat').value='Psychiatry';setFS('','');thumbPreview.classList.remove('show');thumbPreview.src='';pendingThumbUrl='';}
+function resetForm(){['entryUrl','entryTitle','entryDesc','entrySource','entryTopic','entryNotes'].forEach(id=>document.getElementById(id).value='');document.getElementById('entryCat').value='Scientific Article';setFS('','');thumbPreview.classList.remove('show');thumbPreview.src='';pendingThumbUrl='';}
 document.getElementById('filterBar').addEventListener('click',e=>{const btn=e.target.closest('.filter-btn');if(!btn)return;currentFilter=btn.dataset.cat;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderFeed();});
 function fmtDate(iso){if(!iso)return'';return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
 function domOf(url){try{return new URL(url).hostname.replace(/^www\./,'');}catch{return'';}}
@@ -356,7 +374,8 @@ function renderFeed(){
     const src=e.source||(e.url?domOf(e.url):'');
     const thumb=e.image?`<img class="card-thumb" src="${e.image}" alt="" loading="lazy" onerror="this.style.display='none'">`:`<div class="card-thumb-placeholder"><div class="card-thumb-placeholder-icon">§</div></div>`;
     const cardLink=e.url?`<a class="card-link" href="${e.url}" target="_blank" rel="noopener noreferrer">Read →</a>`:'<span></span>';
-    return`<div class="read-card" data-id="${e.id}">${thumb}<div class="card-body"><div class="card-meta">${src?`<span class="card-source">${src}</span><div class="card-sep"></div>`:''}<span class="card-date">${fmtDate(e.date)}</span>${e.category?`<span class="card-cat">${e.category}`:''}</div><div class="card-title">${e.title}</div>${e.desc?`<div class="card-desc">${e.desc}</div>`:''}${e.notes?`<div class="card-notes">${e.notes}</div>`:''}</div><div class="card-footer">${cardLink}<button class="card-delete" data-id="${e.id}">Remove</button></div></div>`;
+    const topicBadge=e.topic?`<span class="card-topic">${e.topic}</span>`:'';
+    return`<div class="read-card" data-id="${e.id}">${thumb}<div class="card-body"><div class="card-meta">${src?`<span class="card-source">${src}</span><div class="card-sep"></div>`:''}<span class="card-date">${fmtDate(e.date)}</span>${e.category?`<span class="card-cat">${e.category}</span>`:''}</div>${topicBadge}<div class="card-title">${e.title}</div>${e.desc?`<div class="card-desc">${e.desc}</div>`:''}${e.notes?`<div class="card-notes">${e.notes}</div>`:''}</div><div class="card-footer">${cardLink}<button class="card-delete" data-id="${e.id}">Remove</button></div></div>`;
   }).join('');
   feed.querySelectorAll('.card-delete').forEach(btn=>{btn.addEventListener('click',()=>{saveEntries(loadEntries().filter(e=>e.id!==+btn.dataset.id));renderFeed();});});
 }

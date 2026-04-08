@@ -27,9 +27,9 @@ body{background:var(--iv);color:var(--pr);font-family:var(--fb);overflow-x:hidde
 #cur,#curR{display:none}
 @media(pointer:fine){body{cursor:none}a,button{cursor:none}#cur{display:block;position:fixed;width:7px;height:7px;background:var(--cr);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}#curR{display:block;position:fixed;width:30px;height:30px;border:1px solid rgba(0,48,73,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}#curR.h{width:52px;height:52px;border-color:var(--cr)}}
 nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.5rem,4vw,3.5rem);background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
-.nlogo{font-family:var(--fm);font-size:clamp(0.5rem,0.7vw,0.63rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
+.nlogo{font-family:var(--fm);font-size:clamp(0.68rem,0.95vw,0.84rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
 .nlinks{display:flex;gap:2.5rem;list-style:none;align-items:center}
-.nlinks a{font-family:var(--fm);font-size:clamp(0.46rem,0.65vw,0.58rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
+.nlinks a{font-family:var(--fm);font-size:clamp(0.62rem,0.85vw,0.75rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
 .nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--cr);transition:width .3s}
 .nlinks a:hover{opacity:1}.nlinks a:hover::after{width:100%}
 .nlinks .active-link{opacity:.9;color:var(--st)}
@@ -41,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content
 .drawer a{font-family:var(--fd);font-size:clamp(2.2rem,7vw,3.5rem);color:var(--iv);text-decoration:none;font-style:italic;opacity:.6;transition:opacity .2s,color .2s}
 .drawer a:hover,.drawer a:active{opacity:1;color:var(--st)}
 .drawer-foot{position:absolute;bottom:2rem;font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.18em;text-transform:uppercase;color:var(--iv);opacity:.2}
-.hero{height:clamp(320px,44svh,540px);background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+.hero{height:clamp(420px,52svh,600px);background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(5rem,8vw,8rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
 #eegCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:.55}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(102,155,188,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(102,155,188,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
 .vrule{position:absolute;top:0;left:clamp(1.5rem,4vw,4rem);width:1px;height:100%;background:linear-gradient(to bottom,transparent,var(--cr) 25%,var(--cr) 75%,transparent);opacity:.4}
@@ -118,18 +118,19 @@ footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justi
   <div class="bio-grid rv">
     <div>
       <div class="stag">Background</div>
-      <div class="pull-quote">"The brain is not a machine to fix — it is a person to understand."</div>
+      <div class="pull-quote">"Everyone is someone to someone — the mind is not a machine to fix, but a person to understand."</div>
       <div class="body-text">
-        <p>I am a physician-scientist completing a dual MD/PhD at Case Western Reserve University, with a focus in neuroscience and structural biology. I am entering psychiatry residency at Massachusetts General Hospital and McLean Hospital — one of the most rigorous and research-intensive programs in the country.</p>
-        <p>My intellectual identity sits at the intersection of interventional psychiatry and relational psychodynamics. I believe the best psychiatric care requires both deep mechanistic knowledge of circuits and a sustained commitment to the person across from you.</p>
-        <p>I am drawn to the places where science reaches its limits — where the clinical question becomes also a philosophical one. What does it mean to modify a memory? To stimulate a mood? To intervene in the experience of a self?</p>
+        <p>I am a physician-scientist completing a dual MD/PhD program at Case Western Reserve University. My PhD, completed at Stony Brook University, is in Biochemistry and Structural Biology — I spent six years characterizing the atomic architecture of amyloid-β plaques in Alzheimer's disease and cerebral amyloid angiopathy. That work was a path to healing, not an end in itself.</p>
+        <p>In June 2026 I begin psychiatry residency at Massachusetts General Hospital and McLean Hospital. The trajectory — from molecular structure to circuit, from bench to bedside — has always been organized around a single question: how do we preserve the continuity of a self when the brain begins to fail it?</p>
+        <p>I am drawn to the places where science reaches its limits and the clinical question becomes also a philosophical one. What does it mean to modify a memory? To stimulate a mood? To intervene in the experience of a self?</p>
       </div>
     </div>
     <div class="rv d1">
       <div class="stag">Clinical Focus</div>
       <div class="body-text">
-        <p>My clinical interests center on interventional psychiatry — TMS, ECT, ketamine, and emerging neurostimulation modalities for treatment-resistant conditions. I am particularly interested in how circuit-based approaches can be individualized: moving away from population-level protocols toward patient-specific stimulation informed by neuroimaging and biomarkers.</p>
-        <p>Alongside this, I maintain a strong commitment to psychoanalytic and relational frameworks. I believe these are not in tension with neuromodulation but offer complementary maps of the same territory — the experience of the human mind under stress, in relationship, and in suffering.</p>
+        <p>My clinical interests center on interventional psychiatry — TMS, ECT, ketamine, and emerging neurostimulation modalities for treatment-resistant conditions. I am particularly interested in moving away from population-level protocols toward patient-specific stimulation informed by neuroimaging and biomarkers.</p>
+        <p>Alongside this, I maintain a deep commitment to psychoanalytic and relational frameworks. These are not in tension with neuromodulation — they offer complementary maps of the same territory. My training at MGH–McLean is one of the few programs where circuit-based psychiatry and analytic rigor genuinely coexist.</p>
+        <p>I also co-founded HyperCase, a university-wide interdisciplinary biotechnology accelerator at CWRU, connecting medical, engineering, law, and business students with clinical partners at Cleveland Clinic, University Hospitals, and MetroHealth.</p>
       </div>
     </div>
   </div>
@@ -137,12 +138,24 @@ footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justi
   <div class="cv-section rv">
     <div class="cv-section-label">Education</div>
     <div class="cv-item">
-      <div class="cv-year">2019–2026</div>
-      <div><div class="cv-title">MD/PhD — Medicine & Neuroscience</div><div class="cv-inst">Case Western Reserve University School of Medicine, Cleveland OH</div></div>
+      <div class="cv-year">2022–2026</div>
+      <div><div class="cv-title">Doctor of Medicine (MD)</div><div class="cv-inst">Case Western Reserve University School of Medicine, Cleveland OH</div></div>
     </div>
     <div class="cv-item">
-      <div class="cv-year">2015–2019</div>
-      <div><div class="cv-title">BA — Biochemistry & Neuroscience</div><div class="cv-inst">New York University, New York NY</div></div>
+      <div class="cv-year">2019–2022</div>
+      <div><div class="cv-title">Doctor of Philosophy — Biochemistry & Structural Biology</div><div class="cv-inst">Stony Brook University — Thesis: <em>Structure of vascular amyloid-β from sporadic and familial cerebral amyloid angiopathy</em></div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2017–2018</div>
+      <div><div class="cv-title">Master of Science — Neurobiology & Behavior</div><div class="cv-inst">Stony Brook University — Thesis: <em>Structural insight into amyloid-β vascular deposits and the influence of copper on antiparallel stability</em></div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2013–2017</div>
+      <div><div class="cv-title">Bachelor of Science — Biochemistry (Honors, Presidential Scholar)</div><div class="cv-inst">Stony Brook University — Elof Carlson Award for most scholarly contribution through thesis</div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2009–2013</div>
+      <div><div class="cv-title">Accelerated Program</div><div class="cv-inst">Lycée Gerson, Paris, France</div></div>
     </div>
   </div>
 
@@ -150,25 +163,49 @@ footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justi
     <div class="cv-section-label">Training & Appointments</div>
     <div class="cv-item">
       <div class="cv-year">2026–</div>
-      <div><div class="cv-title">Psychiatry Resident, PGY-1</div><div class="cv-inst">Massachusetts General Hospital – McLean Hospital, Boston MA</div></div>
+      <div><div class="cv-title">Psychiatry Residency (PGY-1)</div><div class="cv-inst">Massachusetts General Hospital – McLean Hospital, Boston MA · Harvard Medical School affiliate program; one of the nation's premier research-intensive psychiatry training programs integrating interventional, psychodynamic, and neuroscience-based approaches.</div></div>
     </div>
     <div class="cv-item">
-      <div class="cv-year">2022–2025</div>
-      <div><div class="cv-title">Doctoral Researcher — Structural Biology & Neuromodulation</div><div class="cv-inst">Case Western Reserve University, Cleveland OH</div></div>
+      <div class="cv-year">2023–</div>
+      <div><div class="cv-title">Research — Functional Neuroanatomy & Neuromodulation</div><div class="cv-inst">Case Western Reserve / University Hospital · PI: Andrew Crofton, PhD & Michael Staudt, MD · Neuromodulatory interventions for memory and cognitive deficits</div></div>
     </div>
     <div class="cv-item">
-      <div class="cv-year">2021</div>
-      <div><div class="cv-title">Research Fellow</div><div class="cv-inst">National Institute of Mental Health (NIMH), Bethesda MD</div></div>
+      <div class="cv-year">2023</div>
+      <div><div class="cv-title">Research — Brain Modulation Lab</div><div class="cv-inst">Massachusetts General Hospital / MIT · PI: Mark Richardson, MD, PhD · Determinants of patient responsiveness to RNS for resistant epilepsy</div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2022–2023</div>
+      <div><div class="cv-title">Research — Functional Neural Interface Lab</div><div class="cv-inst">Case Western Reserve / MetroHealth · PI: Dustin Tyer, PhD & Jonathan Baskin, MD · Carotid sinus stimulation for resistant hypertension</div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2020</div>
+      <div><div class="cv-title">EMT-B Certification</div><div class="cv-inst">Suffolk County Community College, Suffolk NY</div></div>
     </div>
   </div>
 
   <div class="cv-section rv d2">
     <div class="cv-section-label">Areas of Interest</div>
     <div class="interests-grid">
-      <div class="interest-card"><span class="interest-icon">∿</span><div class="interest-title">TMS & ECT</div><div class="interest-body">Transcranial magnetic stimulation and electroconvulsive therapy for treatment-resistant depression and beyond.</div></div>
-      <div class="interest-card"><span class="interest-icon">◎</span><div class="interest-title">Memory & Identity</div><div class="interest-body">How neuromodulation alters episodic and declarative memory — and what that means ethically for selfhood.</div></div>
-      <div class="interest-card"><span class="interest-icon">⬡</span><div class="interest-title">Circuit Psychiatry</div><div class="interest-body">Biomarker-guided, individualized brain stimulation informed by structural and functional neuroimaging.</div></div>
-      <div class="interest-card"><span class="interest-icon">∞</span><div class="interest-title">Psychoanalysis</div><div class="interest-body">Relational psychodynamics, attachment, and the intersubjective dimensions of therapeutic change.</div></div>
+      <div class="interest-card"><span class="interest-icon">∿</span><div class="interest-title">TMS · ECT · DBS</div><div class="interest-body">Transcranial magnetic stimulation, electroconvulsive therapy, and deep brain stimulation for treatment-resistant psychiatric illness.</div></div>
+      <div class="interest-card"><span class="interest-icon">◎</span><div class="interest-title">Memory & Selfhood</div><div class="interest-body">How neuromodulation alters episodic and declarative memory — and what those alterations mean for personal identity and continuity of self.</div></div>
+      <div class="interest-card"><span class="interest-icon">⬡</span><div class="interest-title">Circuit Psychiatry</div><div class="interest-body">Biomarker-guided, patient-specific brain stimulation informed by structural and functional neuroimaging data.</div></div>
+      <div class="interest-card"><span class="interest-icon">∞</span><div class="interest-title">Psychoanalysis</div><div class="interest-body">Relational and psychodynamic frameworks as necessary counterweights to mechanistic neuroscience — complementary maps of the same territory.</div></div>
+    </div>
+  </div>
+
+  <div class="cv-section rv d3">
+    <div class="cv-section-label">Selected Publications</div>
+    <div class="cv-item">
+      <div class="cv-year">2024</div>
+      <div><div class="cv-title">An electrostatic cluster guides Aβ40 fibril formation in sporadic and Dutch-type cerebral amyloid angiopathy</div><div class="cv-inst">Crooks EJ et al. · <em>Journal of Biological Chemistry</em> · doi 10.1016/j.jsb.2024.108092</div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2020</div>
+      <div><div class="cv-title">Copper stabilizes antiparallel β-sheet fibrils of the amyloid-β 40 Iowa variant</div><div class="cv-inst">Crooks EJ et al. · <em>Journal of Biological Chemistry</em> · 295(27):8914–8927</div></div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-year">2024</div>
+      <div><div class="cv-title">In My Hands</div><div class="cv-inst">Crooks EJ · <em>Stethos Humanities Publication</em> — Cleveland Clinic · Poem</div></div>
     </div>
   </div>
 
