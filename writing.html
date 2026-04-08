@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Writing by Elliot Crooks — essays and reviews at the intersection of psychiatry, neuroscience, and culture.">
+<meta name="theme-color" content="#000d1a">
+<title>Writing — Elliot Crooks</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000d1a'/><text y='72' x='50' text-anchor='middle' font-size='54' font-family='serif' fill='%23940000' font-weight='bold'>EC</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cr:#940000;--pr:#003049;--space:#000d1a;--st:#669bbc;--iv:#F5F0E8;--sa:#C9B99A;--fd:'Libre Baskerville',serif;--fb:'Cormorant Garamond',serif;--fm:'DM Mono',monospace;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--iv);color:var(--pr);font-family:var(--fb);overflow-x:hidden}
+#gate{position:fixed;inset:0;background:var(--space);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transition:opacity .6s,visibility .6s}
+#gate.gone{opacity:0;visibility:hidden;pointer-events:none}
+#gate-logo{font-family:var(--fd);font-size:clamp(2.4rem,6vw,4rem);font-weight:700;color:var(--iv);letter-spacing:-.04em}#gate-logo span{color:var(--cr)}
+#gate-sub{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.55rem);letter-spacing:.22em;text-transform:uppercase;color:var(--st);opacity:.6}
+#gate-form{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:1rem}
+#gate-input{background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,.2);padding:.6rem 0;font-family:var(--fm);font-size:clamp(0.7rem,1vw,0.9rem);letter-spacing:.14em;color:var(--iv);text-align:center;width:200px;outline:none;transition:border-color .2s}#gate-input:focus{border-color:var(--cr)}
+#gate-input::placeholder{color:rgba(245,240,232,.25);letter-spacing:.2em}
+#gate-btn{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.55rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);background:none;border:1px solid rgba(245,240,232,.2);padding:.55rem 1.6rem;cursor:pointer;transition:border-color .2s,color .2s}#gate-btn:hover{border-color:var(--cr);color:var(--cr)}
+#gate-err{font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.12em;color:var(--cr);opacity:0;transition:opacity .3s}#gate-err.show{opacity:1}
+#gate-rule{width:1px;height:3rem;background:linear-gradient(to bottom,transparent,var(--cr),transparent);margin-bottom:.5rem}
+#cur,#curR{display:none}
+@media(pointer:fine){body{cursor:none}a,button{cursor:none}#cur{display:block;position:fixed;width:7px;height:7px;background:var(--cr);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}#curR{display:block;position:fixed;width:30px;height:30px;border:1px solid rgba(0,48,73,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}#curR.h{width:52px;height:52px;border-color:var(--cr)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.5rem,4vw,3.5rem);background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
+.nlogo{font-family:var(--fm);font-size:clamp(0.5rem,0.7vw,0.63rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
+.nlinks{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nlinks a{font-family:var(--fm);font-size:clamp(0.46rem,0.65vw,0.58rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
+.nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--cr);transition:width .3s}
+.nlinks a:hover{opacity:1}.nlinks a:hover::after{width:100%}
+.nlinks .active-link{opacity:.9;color:var(--st)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;padding:.5rem;z-index:400;width:36px;height:36px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--iv);transition:transform .3s,opacity .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;background:var(--space);z-index:350;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.8rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer.open{opacity:1;pointer-events:all}
+.drawer a{font-family:var(--fd);font-size:clamp(2.2rem,7vw,3.5rem);color:var(--iv);text-decoration:none;font-style:italic;opacity:.6;transition:opacity .2s,color .2s}
+.drawer a:hover,.drawer a:active{opacity:1;color:var(--st)}
+.drawer-foot{position:absolute;bottom:2rem;font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.18em;text-transform:uppercase;color:var(--iv);opacity:.2}
+.hero{height:clamp(320px,44svh,540px);background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+#eegCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:.55}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(102,155,188,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(102,155,188,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.vrule{position:absolute;top:0;left:clamp(1.5rem,4vw,4rem);width:1px;height:100%;background:linear-gradient(to bottom,transparent,var(--cr) 25%,var(--cr) 75%,transparent);opacity:.4}
+.hcontent{position:relative;z-index:10;max-width:1200px}
+.heyebrow{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.55rem);letter-spacing:.24em;text-transform:uppercase;color:var(--st);margin-bottom:1.2rem;display:flex;align-items:center;gap:1.3rem}
+.heyebrow::before{content:'';display:inline-block;width:2.8rem;height:1px;background:var(--cr);flex-shrink:0}
+.hpagetitle{font-family:var(--fd);font-weight:700;color:var(--iv);font-size:clamp(3rem,7vw,6.5rem);line-height:.9;letter-spacing:-.04em}
+.hpagetitle em{color:var(--cr);font-style:italic}
+.hsubtitle{font-family:var(--fd);font-size:clamp(0.92rem,1.5vw,1.25rem);font-style:italic;color:var(--st);opacity:.7;margin-top:1.2rem}
+.page-wrap{max-width:1200px;margin:0 auto;padding:clamp(4rem,8vw,8rem) clamp(1.5rem,4vw,4rem)}
+.stag{font-family:var(--fm);font-size:clamp(0.44rem,0.65vw,0.57rem);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem;color:var(--cr)}
+.stag::before{content:'';width:1.6rem;height:1px;display:inline-block;flex-shrink:0;background:var(--cr)}
+.section-intro{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,1.9rem);font-style:italic;line-height:1.45;color:var(--pr);opacity:.22;max-width:860px;margin-bottom:clamp(3rem,6vw,6rem);font-weight:400}
+.wlist{border-top:1px solid rgba(0,48,73,.1)}
+.witem{display:grid;grid-template-columns:6rem 1fr auto;align-items:start;padding:2.2rem 0;border-bottom:1px solid rgba(0,48,73,.08);gap:2.5rem;text-decoration:none;color:inherit;transition:padding-left .28s;position:relative;-webkit-tap-highlight-color:transparent}
+.witem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--cr);transition:width .28s}
+.witem:hover::before{width:2px}.witem:hover{padding-left:1.2rem}
+.wdate{font-family:var(--fm);font-size:clamp(0.42rem,0.62vw,0.54rem);letter-spacing:.12em;color:var(--st);padding-top:.18rem}
+.wbody{}
+.wtxt{font-family:var(--fd);font-size:clamp(1rem,1.5vw,1.35rem);color:var(--pr);font-style:italic;line-height:1.22;transition:color .2s;margin-bottom:.4rem}
+.witem:hover .wtxt{color:var(--cr)}
+.wdesc{font-family:var(--fb);font-size:clamp(0.88rem,1.1vw,1rem);color:var(--pr);opacity:.4;line-height:1.6;font-weight:300}
+.wtag{font-family:var(--fm);font-size:clamp(0.34rem,0.48vw,0.44rem);letter-spacing:.12em;text-transform:uppercase;color:var(--sa);text-align:right;padding-top:.22rem;white-space:nowrap}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}.rv.on{opacity:1;transform:none}.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.36s}
+footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.fl{font-family:var(--fm);font-size:clamp(0.38rem,0.52vw,0.5rem);letter-spacing:.14em;color:var(--iv);opacity:.17;text-transform:uppercase}
+.fl-mark{color:var(--cr);opacity:.4;margin-right:.4rem}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nlinks{display:none}.hamburger{display:flex}.witem{grid-template-columns:1fr;gap:.3rem;padding:1.5rem 0}.wtag{text-align:left}footer{flex-direction:column;align-items:flex-start;gap:.4rem}}
+</style>
+</head>
+<body>
+<div id="gate"><div id="gate-rule"></div><div id="gate-logo">EC<span>.</span></div><div id="gate-sub">elliotcrooks.com</div><div id="gate-form"><input id="gate-input" type="password" placeholder="ENTER PASSWORD" autocomplete="off" spellcheck="false"><div id="gate-err">Incorrect password</div><button id="gate-btn">Enter</button></div></div>
+<div id="cur"></div><div id="curR"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true">
+  <a href="about.html">About</a><a href="research.html">Research</a><a href="writing.html">Writing</a><a href="contact.html">Contact</a><a href="reads.html">Recent Reads</a>
+  <span class="drawer-foot">elliotcrooks.com</span>
+</div>
+<nav id="nav">
+  <a href="index.html" class="nlogo">Elliot Crooks</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nlinks">
+    <li><a href="about.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="writing.html" class="active-link">Writing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="reads.html">Reads</a></li>
+  </ul>
+</nav>
+<section class="hero" aria-label="Writing">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="vrule" aria-hidden="true"></div>
+  <canvas id="eegCanvas" aria-hidden="true"></canvas>
+  <div class="hcontent">
+    <div class="heyebrow">Essays · Reviews · Thought</div>
+    <h1 class="hpagetitle">Selected<br><em>Writing</em></h1>
+    <div class="hsubtitle">On minds, methods, and the space between.</div>
+  </div>
+</section>
+<main>
+<div class="page-wrap">
+  <div class="stag rv">Essays &amp; Reviews</div>
+  <div class="section-intro rv d1">On minds,<br>methods &amp;<br>the space between.</div>
+  <div class="wlist">
+    <a class="witem rv" href="#"><span class="wdate">2024</span><div class="wbody"><div class="wtxt">On Circuits and Souls: What Neuromodulation Cannot Explain</div><div class="wdesc">An essay on the explanatory gap between electrical stimulation and subjective experience — and why that gap matters clinically.</div></div><span class="wtag">Essay</span></a>
+    <a class="witem rv d1" href="#"><span class="wdate">2024</span><div class="wbody"><div class="wtxt">Memory, Identity, and the Ethics of Intervention</div><div class="wdesc">What does it mean to modify a memory? A philosophical and clinical inquiry into the ethics of memory-targeted neurostimulation.</div></div><span class="wtag">Research</span></a>
+    <a class="witem rv d2" href="#"><span class="wdate">2023</span><div class="wbody"><div class="wtxt">Treatment-Resistant Depression: A Field in Motion</div><div class="wdesc">A synthesis of recent advances in ketamine, TMS, and deep brain stimulation for refractory mood disorders.</div></div><span class="wtag">Review</span></a>
+    <a class="witem rv d3" href="#"><span class="wdate">2023</span><div class="wbody"><div class="wtxt">The Art Basel Gaze: Photography, Perception &amp; the Psychiatric Eye</div><div class="wdesc">How aesthetic experience engages the same neural systems as emotional regulation — a meditation from the Basel art fairs.</div></div><span class="wtag">Essay</span></a>
+    <a class="witem rv d4" href="#"><span class="wdate">2022</span><div class="wbody"><div class="wtxt">Psychoanalysis in the Age of Neuroimaging</div><div class="wdesc">Can the unconscious be localized? A reading of contemporary relational theory against the backdrop of functional connectivity research.</div></div><span class="wtag">Theory</span></a>
+  </div>
+</div>
+</main>
+<footer>
+  <span class="fl"><span class="fl-mark">◆</span>Elliot Crooks — elliotcrooks.com</span>
+  <span class="fl">© 2026</span>
+</footer>
+<script>
+(function(){const PASS='elliot',gate=document.getElementById('gate'),input=document.getElementById('gate-input'),btn=document.getElementById('gate-btn'),err=document.getElementById('gate-err');if(sessionStorage.getItem('ec_auth')==='1'){gate.classList.add('gone');return;}function tryPass(){if(input.value===PASS){sessionStorage.setItem('ec_auth','1');gate.classList.add('gone');}else{err.classList.add('show');input.value='';input.focus();setTimeout(()=>err.classList.remove('show'),2000);}}btn.addEventListener('click',tryPass);input.addEventListener('keydown',e=>{if(e.key==='Enter')tryPass();});input.focus();})();
+if(matchMedia('(pointer:fine)').matches){const cur=document.getElementById('cur'),ring=document.getElementById('curR');let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});(function aR(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(aR)})();document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('h'));el.addEventListener('mouseleave',()=>ring.classList.remove('h'));});}
+const hbtn=document.getElementById('hamburger'),drawer=document.getElementById('drawer');function toggleMenu(o){hbtn.classList.toggle('open',o);drawer.classList.toggle('open',o);hbtn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}hbtn.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleMenu(false);});
+const eeg=document.getElementById('eegCanvas'),ec=eeg.getContext('2d');function rEEG(){eeg.width=eeg.offsetWidth;eeg.height=eeg.offsetHeight}rEEG();window.addEventListener('resize',rEEG,{passive:true});let et=0;const ws=[{y:.28,amp:24,freq:.013,speed:.015,col:'rgba(102,155,188,',b:.2},{y:.52,amp:18,freq:.02,speed:.023,col:'rgba(148,0,0,',b:.15},{y:.75,amp:30,freq:.009,speed:.012,col:'rgba(102,155,188,',b:.12}];function drawEEG(){ec.clearRect(0,0,eeg.width,eeg.height);const W=eeg.width,H=eeg.height;ws.forEach(w=>{ec.beginPath();for(let x=0;x<=W;x+=2){const nx=x/W,base=Math.sin(nx*Math.PI*4*w.freq*100+et*w.speed*50)*w.amp*.22,spk=Math.exp(-Math.pow(((nx+et*w.speed*.08)%1-.5)*22,2))*w.amp,spk2=Math.exp(-Math.pow(((nx+et*w.speed*.08+.42)%1-.5)*17,2))*w.amp*.5,y=H*w.y+base+spk+spk2;x===0?ec.moveTo(x,y):ec.lineTo(x,y);}const g=ec.createLinearGradient(0,0,W,0);g.addColorStop(0,w.col+'0)');g.addColorStop(.25,w.col+w.b+')');g.addColorStop(.75,w.col+w.b+')');g.addColorStop(1,w.col+'0)');ec.strokeStyle=g;ec.lineWidth=1.2;ec.stroke();});et+=.007;requestAnimationFrame(drawEEG);}drawEEG();
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -21,16 +21,16 @@ body{background:var(--iv);color:var(--pr);font-family:var(--fb);overflow-x:hidde
 /* PASSWORD GATE */
 #gate{position:fixed;inset:0;background:var(--space);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transition:opacity .6s,visibility .6s}
 #gate.gone{opacity:0;visibility:hidden;pointer-events:none}
-#gate-logo{font-family:var(--fd);font-size:4rem;font-weight:700;color:var(--iv);letter-spacing:-.04em}
+#gate-logo{font-family:var(--fd);font-size:clamp(2.4rem,6vw,4rem);font-weight:700;color:var(--iv);letter-spacing:-.04em}
 #gate-logo span{color:var(--cr)}
-#gate-sub{font-family:var(--fm);font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--st);opacity:.6}
+#gate-sub{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.55rem);letter-spacing:.22em;text-transform:uppercase;color:var(--st);opacity:.6}
 #gate-form{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:1rem}
-#gate-input{background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,.2);padding:.6rem 0;font-family:var(--fm);font-size:.9rem;letter-spacing:.14em;color:var(--iv);text-align:center;width:200px;outline:none;transition:border-color .2s}
+#gate-input{background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,.2);padding:.6rem 0;font-family:var(--fm);font-size:clamp(0.7rem,1vw,0.9rem);letter-spacing:.14em;color:var(--iv);text-align:center;width:200px;outline:none;transition:border-color .2s}
 #gate-input:focus{border-color:var(--cr)}
-#gate-input::placeholder{color:rgba(245,240,232,.25);font-size:.6rem;letter-spacing:.2em}
-#gate-btn{font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--iv);background:none;border:1px solid rgba(245,240,232,.2);padding:.55rem 1.6rem;cursor:pointer;transition:border-color .2s,color .2s}
+#gate-input::placeholder{color:rgba(245,240,232,.25);font-size:clamp(0.46rem,0.6vw,0.6rem);letter-spacing:.2em}
+#gate-btn{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.55rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);background:none;border:1px solid rgba(245,240,232,.2);padding:.55rem 1.6rem;cursor:pointer;transition:border-color .2s,color .2s}
 #gate-btn:hover{border-color:var(--cr);color:var(--cr)}
-#gate-err{font-family:var(--fm);font-size:.5rem;letter-spacing:.12em;color:var(--cr);opacity:0;transition:opacity .3s}
+#gate-err{font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.12em;color:var(--cr);opacity:0;transition:opacity .3s}
 #gate-err.show{opacity:1}
 #gate-rule{width:1px;height:3rem;background:linear-gradient(to bottom,transparent,var(--cr),transparent);margin-bottom:.5rem}
 
@@ -44,11 +44,11 @@ body{background:var(--iv);color:var(--pr);font-family:var(--fb);overflow-x:hidde
 }
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3.5rem;transition:background .4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.5rem,4vw,3.5rem);transition:background .4s}
 nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
-.nlogo{font-family:var(--fm);font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
+.nlogo{font-family:var(--fm);font-size:clamp(0.5rem,0.7vw,0.63rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.82}
 .nlinks{display:flex;gap:2.5rem;list-style:none;align-items:center}
-.nlinks a{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
+.nlinks a{font-family:var(--fm);font-size:clamp(0.46rem,0.65vw,0.58rem);letter-spacing:.14em;text-transform:uppercase;color:var(--iv);text-decoration:none;opacity:.45;transition:opacity .2s;position:relative;padding:.2rem 0}
 .nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--cr);transition:width .3s}
 .nlinks a:hover{opacity:1}.nlinks a:hover::after{width:100%}
 .nlinks .reads-link{opacity:.7;color:var(--st)}
@@ -61,10 +61,10 @@ nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
 .drawer.open{opacity:1;pointer-events:all}
 .drawer a{font-family:var(--fd);font-size:clamp(2.2rem,7vw,3.5rem);color:var(--iv);text-decoration:none;font-style:italic;opacity:.6;transition:opacity .2s,color .2s}
 .drawer a:hover,.drawer a:active{opacity:1;color:var(--st)}
-.drawer-foot{position:absolute;bottom:2rem;font-family:var(--fm);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--iv);opacity:.2}
+.drawer-foot{position:absolute;bottom:2rem;font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.18em;text-transform:uppercase;color:var(--iv);opacity:.2}
 
 /* HERO */
-.hero{height:100svh;min-height:520px;background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 5rem}
+.hero{height:100svh;min-height:520px;background:var(--space);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.5rem,4vw,4rem) clamp(3rem,6vw,5rem)}
 .depth-layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .depth-layer::after{content:'';display:block;border-radius:50%;transform:scale(0);animation:depthFall 3.4s cubic-bezier(.16,1,.3,1) forwards}
 .depth-layer:nth-child(1)::after{width:28vw;height:28vw;border:1px solid rgba(102,155,188,.14);animation-delay:.0s}
@@ -76,27 +76,29 @@ nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
 .starfield{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .star{position:absolute;background:#fff;border-radius:50%;animation:starZ linear infinite}
 @keyframes starZ{0%{transform:scale(0);opacity:0}15%{opacity:.6}85%{opacity:.28}100%{transform:scale(4) translate(var(--tx),var(--ty));opacity:0}}
-.mob-rings{display:none;position:absolute;inset:0;pointer-events:none;align-items:center;justify-content:center}
-.mob-ring{position:absolute;border-radius:50%;opacity:0;animation:mobPulse 3.5s ease-out infinite}
-.mob-ring:nth-child(1){width:240px;height:240px;border:1px solid var(--cr);animation-delay:0s}
-.mob-ring:nth-child(2){width:340px;height:340px;border:1px solid var(--st);animation-delay:1.16s}
-.mob-ring:nth-child(3){width:170px;height:170px;border:1px solid var(--cr);animation-delay:2.33s}
-@keyframes mobPulse{0%{transform:scale(.06);opacity:.75}100%{transform:scale(1.9);opacity:0}}
+
+/* MOBILE — CSS lightning bolts replace canvas arcs */
+.mob-lightning{display:none;position:absolute;inset:0;pointer-events:none;align-items:center;justify-content:center}
+.mob-bolt{position:absolute;opacity:0;clip-path:polygon(55% 0%,100% 0%,52% 44%,100% 44%,0% 100%,38% 56%,0% 56%)}
+.mob-bolt:nth-child(1){width:18px;height:48px;background:var(--cr);top:calc(50% - 100px);left:calc(50% + 44px);animation:boltFlash .3s 0s ease-in-out infinite}
+.mob-bolt:nth-child(2){width:14px;height:36px;background:var(--st);top:calc(50% + 32px);left:calc(50% - 62px);animation:boltFlash .3s .4s ease-in-out infinite}
+.mob-bolt:nth-child(3){width:11px;height:28px;background:var(--cr);top:calc(50% - 24px);left:calc(50% + 12px);animation:boltFlash .3s .8s ease-in-out infinite}
+@keyframes boltFlash{0%,100%{opacity:0}25%{opacity:.82}65%{opacity:.38}}
+
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(102,155,188,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(102,155,188,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;animation:fadeIn 2.5s ease forwards;opacity:0}
-.vrule{position:absolute;top:0;left:4rem;width:1px;height:0;background:linear-gradient(to bottom,transparent,var(--cr) 25%,var(--cr) 75%,transparent);opacity:.4;animation:ruleGrow 2s .5s ease forwards}
+.vrule{position:absolute;top:0;left:clamp(1.5rem,4vw,4rem);width:1px;height:0;background:linear-gradient(to bottom,transparent,var(--cr) 25%,var(--cr) 75%,transparent);opacity:.4;animation:ruleGrow 2s .5s ease forwards}
 @keyframes ruleGrow{to{height:100%}}
 .bleeder{position:absolute;right:-0.05em;bottom:-0.12em;font-family:var(--fd);font-size:clamp(16rem,34vw,34rem);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(102,155,188,.055);line-height:1;pointer-events:none;user-select:none;animation:fadeIn 2s 1s ease forwards;opacity:0}
 #eegCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:0;animation:fadeIn 1.4s 1s ease forwards}
-/* DOT ARC CANVAS — sits above EEG, below content */
 #dotArcCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6}
 #arcCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
 .nodes-layer{position:absolute;inset:0;pointer-events:none;z-index:5}
 .node{position:absolute;border-radius:50%;background:var(--st)}
-.hscroll{position:absolute;bottom:5rem;right:4rem;font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--iv);opacity:.32;writing-mode:vertical-rl;display:flex;align-items:center;gap:1rem;z-index:10}
+.hscroll{position:absolute;bottom:5rem;right:clamp(1.5rem,4vw,4rem);font-family:var(--fm);font-size:clamp(0.38rem,0.5vw,0.5rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);opacity:.32;writing-mode:vertical-rl;display:flex;align-items:center;gap:1rem;z-index:10}
 .hscroll::after{content:'';width:1px;height:3rem;background:var(--iv);opacity:.32;animation:sPulse 2s ease-in-out infinite}
 @keyframes sPulse{0%,100%{height:3rem;opacity:.28}50%{height:5rem;opacity:.52}}
 .hcontent{position:relative;z-index:10;max-width:1000px}
-.heyebrow{font-family:var(--fm);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--st);margin-bottom:2.4rem;display:flex;align-items:center;gap:1.3rem;opacity:0;animation:fadeUp .8s .4s forwards;flex-wrap:wrap}
+.heyebrow{font-family:var(--fm);font-size:clamp(0.42rem,0.65vw,0.6rem);letter-spacing:.24em;text-transform:uppercase;color:var(--st);margin-bottom:2.4rem;display:flex;align-items:center;gap:1.3rem;opacity:0;animation:fadeUp .8s .4s forwards;flex-wrap:wrap}
 .heyebrow::before{content:'';display:inline-block;width:2.8rem;height:1px;background:var(--cr);flex-shrink:0}
 .hname{font-family:var(--fd);font-weight:700;color:var(--iv);line-height:.88;letter-spacing:-.035em}
 .hname .ln1{font-size:clamp(4.5rem,10.5vw,10.5rem);display:block;overflow:hidden}
@@ -110,32 +112,32 @@ nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-.band{background:var(--cr);padding:.75rem 4rem;display:flex;align-items:center;gap:2.5rem;position:relative;z-index:20;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.band{background:var(--cr);padding:clamp(.5rem,.8vw,.75rem) clamp(1rem,2.5vw,4rem);display:flex;align-items:center;gap:2.5rem;position:relative;z-index:20;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .band::-webkit-scrollbar{display:none}
-.band-text{font-family:var(--fm);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--iv);opacity:.84;white-space:nowrap;flex-shrink:0}
+.band-text{font-family:var(--fm);font-size:clamp(0.42rem,0.65vw,0.56rem);letter-spacing:.2em;text-transform:uppercase;color:var(--iv);opacity:.84;white-space:nowrap;flex-shrink:0}
 .band-sep{width:1px;height:.65rem;background:rgba(245,240,232,.28);flex-shrink:0}
 
-.stag{font-family:var(--fm);font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem}
+.stag{font-family:var(--fm);font-size:clamp(0.44rem,0.65vw,0.57rem);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem}
 .stag::before{content:'';width:1.6rem;height:1px;display:inline-block;flex-shrink:0}
 
-.about{padding:10rem 4rem;background:var(--iv);position:relative;overflow:visible}
+.about{padding:clamp(5rem,9vw,10rem) clamp(1.5rem,4vw,4rem);background:var(--iv);position:relative;overflow:visible}
 .about-wm{position:absolute;right:-3rem;top:50%;transform:translateY(-52%) rotate(8deg);font-family:var(--fd);font-size:clamp(10rem,20vw,18rem);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(0,48,73,.04);pointer-events:none;user-select:none;line-height:1;letter-spacing:-.03em;white-space:nowrap}
 .about-grid{display:grid;grid-template-columns:340px 1fr;gap:7rem;align-items:start;position:relative;z-index:2;max-width:1200px;margin:0 auto}
 .about .stag{color:var(--cr)}.about .stag::before{background:var(--cr)}
-.about-num{font-family:var(--fd);font-size:7.5rem;font-weight:700;color:var(--sa);opacity:.2;line-height:1;letter-spacing:-.05em;margin-bottom:1.5rem}
+.about-num{font-family:var(--fd);font-size:clamp(3.5rem,8vw,7.5rem);font-weight:700;color:var(--sa);opacity:.2;line-height:1;letter-spacing:-.05em;margin-bottom:1.5rem}
 .about-pull{font-family:var(--fd);font-size:clamp(1.05rem,1.7vw,1.42rem);font-style:italic;color:var(--pr);line-height:1.58;border-left:3px solid var(--cr);padding-left:1.4rem}
 .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;background:rgba(0,48,73,.1)}
 .stat{background:var(--iv);padding:1.2rem;text-align:center}
-.stat-n{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--pr);line-height:1}
+.stat-n{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,2rem);font-weight:700;color:var(--pr);line-height:1}
 .stat-n span{color:var(--cr)}
-.stat-l{font-family:var(--fm);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pr);opacity:.38;margin-top:.3rem}
+.stat-l{font-family:var(--fm);font-size:clamp(0.36rem,0.52vw,0.46rem);letter-spacing:.12em;text-transform:uppercase;color:var(--pr);opacity:.38;margin-top:.3rem}
 .about-body{font-size:clamp(1.08rem,1.4vw,1.23rem);line-height:1.92;color:var(--pr);opacity:.78;font-weight:300}
 .about-body p+p{margin-top:1.5rem}
 .about-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem}
-.tag{font-family:var(--fm);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(0,48,73,.2);color:var(--pr);border-radius:999px;transition:all .22s;-webkit-tap-highlight-color:transparent}
+.tag{font-family:var(--fm);font-size:clamp(0.38rem,0.55vw,0.5rem);letter-spacing:.1em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(0,48,73,.2);color:var(--pr);border-radius:999px;transition:all .22s;-webkit-tap-highlight-color:transparent}
 .tag:hover{background:var(--pr);color:var(--iv);border-color:var(--pr)}
 
-.research{padding:10rem 4rem;background:var(--space)}
+.research{padding:clamp(5rem,9vw,10rem) clamp(1.5rem,4vw,4rem);background:var(--space)}
 .research-inner{max-width:1200px;margin:0 auto}
 .research .stag{color:var(--st)}.research .stag::before{background:var(--st)}
 .rtitle{font-family:var(--fd);font-size:clamp(2.4rem,4.8vw,4.4rem);font-weight:700;color:var(--iv);line-height:.93;letter-spacing:-.03em;margin-bottom:3.5rem}
@@ -146,40 +148,40 @@ nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
 .rfeat:hover{background:rgba(245,240,232,.06)}
 .rfeat-left{padding:3rem;border-right:1px solid rgba(245,240,232,.06);display:flex;flex-direction:column;justify-content:space-between}
 .rfeat-right{padding:3rem;display:flex;align-items:flex-end}
-.rfeat-badge{font-family:var(--fm);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;background:var(--cr);color:var(--iv);padding:.28rem .7rem;display:inline-block;margin-bottom:1.5rem}
-.rfeat-num{font-family:var(--fm);font-size:.5rem;letter-spacing:.15em;color:var(--st);opacity:.45;margin-bottom:1rem}
+.rfeat-badge{font-family:var(--fm);font-size:clamp(0.38rem,0.55vw,0.48rem);letter-spacing:.18em;text-transform:uppercase;background:var(--cr);color:var(--iv);padding:.28rem .7rem;display:inline-block;margin-bottom:1.5rem}
+.rfeat-num{font-family:var(--fm);font-size:clamp(0.38rem,0.55vw,0.5rem);letter-spacing:.15em;color:var(--st);opacity:.45;margin-bottom:1rem}
 .rfeat-title{font-family:var(--fd);font-size:clamp(1.3rem,2.1vw,2rem);color:var(--iv);line-height:1.2;font-weight:400}
-.rfeat-body{font-family:var(--fb);font-size:1.05rem;color:var(--iv);opacity:.42;line-height:1.8;font-weight:300}
-.rfeat-link{font-family:var(--fm);font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cr);display:inline-flex;align-items:center;gap:.6rem;margin-top:2.5rem;text-decoration:none;transition:gap .2s}
+.rfeat-body{font-family:var(--fb);font-size:clamp(0.92rem,1.15vw,1.05rem);color:var(--iv);opacity:.42;line-height:1.8;font-weight:300}
+.rfeat-link{font-family:var(--fm);font-size:clamp(0.42rem,0.6vw,0.52rem);letter-spacing:.14em;text-transform:uppercase;color:var(--cr);display:inline-flex;align-items:center;gap:.6rem;margin-top:2.5rem;text-decoration:none;transition:gap .2s}
 .rfeat-link:hover{gap:1.1rem}
 .rcards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,240,232,.05)}
 .rcard{background:var(--space);padding:2.8rem;position:relative;overflow:hidden;transition:background .3s}
 .rcard:hover{background:rgba(102,155,188,.06)}
 .rcard-bar{position:absolute;top:0;left:0;width:2px;height:0;background:var(--cr);transition:height .4s}
 .rcard:hover .rcard-bar{height:100%}
-.rcard-num{font-family:var(--fm);font-size:.5rem;letter-spacing:.16em;color:var(--st);opacity:.38;margin-bottom:1.8rem}
-.rcard-title{font-family:var(--fd);font-size:1.18rem;color:var(--iv);line-height:1.28;font-weight:400;margin-bottom:.9rem}
-.rcard-body{font-family:var(--fb);font-size:1rem;color:var(--iv);opacity:.38;line-height:1.75;font-weight:300}
-.rcard-link{font-family:var(--fm);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--st);margin-top:2rem;display:block;opacity:0;transition:opacity .25s}
+.rcard-num{font-family:var(--fm);font-size:clamp(0.38rem,0.55vw,0.5rem);letter-spacing:.16em;color:var(--st);opacity:.38;margin-bottom:1.8rem}
+.rcard-title{font-family:var(--fd);font-size:clamp(0.98rem,1.4vw,1.18rem);color:var(--iv);line-height:1.28;font-weight:400;margin-bottom:.9rem}
+.rcard-body{font-family:var(--fb);font-size:clamp(0.88rem,1.1vw,1rem);color:var(--iv);opacity:.38;line-height:1.75;font-weight:300}
+.rcard-link{font-family:var(--fm);font-size:clamp(0.38rem,0.52vw,0.5rem);letter-spacing:.12em;text-transform:uppercase;color:var(--st);margin-top:2rem;display:block;opacity:0;transition:opacity .25s}
 .rcard:hover .rcard-link{opacity:1}
 
-.writing{padding:10rem 4rem;background:var(--iv);position:relative;overflow:visible}
+.writing{padding:clamp(5rem,9vw,10rem) clamp(1.5rem,4vw,4rem);background:var(--iv);position:relative;overflow:visible}
 .writing-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
 .writing .stag{color:var(--cr)}.writing .stag::before{background:var(--cr)}
 .wtitle{font-family:var(--fd);font-size:clamp(2.4rem,4.8vw,4.4rem);font-weight:700;color:var(--pr);line-height:.93;letter-spacing:-.03em;margin-bottom:.8rem}
 .wtitle em{font-style:italic;color:var(--cr)}
-.wpull{margin:0 0 3rem -4rem;padding:1.8rem 0 1.8rem 4rem;font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.7rem);font-style:italic;color:var(--pr);opacity:.1;line-height:1.12;pointer-events:none;user-select:none;border-left:3px solid rgba(148,0,0,.07)}
+.wpull{margin:0 0 3rem clamp(-1.5rem,-4vw,-4rem);padding:1.8rem 0 1.8rem clamp(1.5rem,4vw,4rem);font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.7rem);font-style:italic;color:var(--pr);opacity:.1;line-height:1.12;pointer-events:none;user-select:none;border-left:3px solid rgba(148,0,0,.07)}
 .wlist{border-top:1px solid rgba(0,48,73,.1)}
 .witem{display:grid;grid-template-columns:5.5rem 1fr 7rem;align-items:center;padding:2rem 0;border-bottom:1px solid rgba(0,48,73,.1);gap:2rem;text-decoration:none;color:inherit;transition:padding-left .28s;position:relative;-webkit-tap-highlight-color:transparent}
 .witem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--cr);transition:width .28s}
 .witem:hover::before{width:2px}
 .witem:hover{padding-left:1.2rem}
-.wdate{font-family:var(--fm);font-size:.54rem;letter-spacing:.12em;color:var(--st)}
+.wdate{font-family:var(--fm);font-size:clamp(0.42rem,0.62vw,0.54rem);letter-spacing:.12em;color:var(--st)}
 .wtxt{font-family:var(--fd);font-size:clamp(.98rem,1.4vw,1.32rem);color:var(--pr);font-style:italic;line-height:1.25;transition:color .2s}
 .witem:hover .wtxt{color:var(--cr)}
-.wtag{font-family:var(--fm);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sa);text-align:right}
+.wtag{font-family:var(--fm);font-size:clamp(0.36rem,0.52vw,0.46rem);letter-spacing:.12em;text-transform:uppercase;color:var(--sa);text-align:right}
 
-.contact{padding:11rem 4rem;background:var(--space);position:relative;overflow:hidden}
+.contact{padding:clamp(5rem,9vw,11rem) clamp(1.5rem,4vw,4rem);background:var(--space);position:relative;overflow:hidden}
 .cx-origin{position:absolute;right:28%;top:50%;transform:translate(50%,-50%);z-index:3;pointer-events:none}
 .cx-dot{width:6px;height:6px;background:var(--cr);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 .cx-h{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:1px;background:var(--cr);opacity:.55}
@@ -193,49 +195,44 @@ nav.sc{background:rgba(0,13,26,.96);backdrop-filter:blur(14px)}
 .contact .stag{color:var(--st)}.contact .stag::before{background:var(--st)}
 .ctitle{font-family:var(--fd);font-size:clamp(3.2rem,6.5vw,6.5rem);font-weight:700;color:var(--iv);line-height:.88;letter-spacing:-.04em}
 .ctitle .cr{color:var(--cr)}
-.cright p{font-family:var(--fb);font-size:1.12rem;color:var(--iv);opacity:.42;line-height:1.88;font-style:italic;margin-bottom:2.5rem}
+.cright p{font-family:var(--fb);font-size:clamp(0.95rem,1.3vw,1.12rem);color:var(--iv);opacity:.42;line-height:1.88;font-style:italic;margin-bottom:2.5rem}
 .clink{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 0;border-bottom:1px solid rgba(245,240,232,.06);text-decoration:none;transition:padding-left .24s;-webkit-tap-highlight-color:transparent}
 .clink:hover{padding-left:.7rem}
-.clink-l{font-family:var(--fm);font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--iv);opacity:.38;transition:opacity .2s,color .2s}
+.clink-l{font-family:var(--fm);font-size:clamp(0.44rem,0.65vw,0.57rem);letter-spacing:.16em;text-transform:uppercase;color:var(--iv);opacity:.38;transition:opacity .2s,color .2s}
 .clink:hover .clink-l{opacity:1;color:var(--st)}
-.clink-arr{font-family:var(--fm);font-size:.7rem;color:var(--cr);opacity:0;transition:opacity .2s}
+.clink-arr{font-family:var(--fm);font-size:clamp(0.55rem,0.8vw,0.7rem);color:var(--cr);opacity:0;transition:opacity .2s}
 .clink:hover .clink-arr{opacity:1}
-footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
-.fl{font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;color:var(--iv);opacity:.17;text-transform:uppercase}
-.fl-mark{color:var(--cr);opacity:.4;margin-right:.4rem;font-size:.55rem}
+footer{background:#00060d;padding:2rem clamp(1.5rem,4vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.fl{font-family:var(--fm);font-size:clamp(0.38rem,0.52vw,0.5rem);letter-spacing:.14em;color:var(--iv);opacity:.17;text-transform:uppercase}
+.fl-mark{color:var(--cr);opacity:.4;margin-right:.4rem;font-size:clamp(0.42rem,0.58vw,0.55rem)}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
 
+/* TABLET */
 @media(min-width:769px) and (max-width:1024px){
-  nav{padding:1.2rem 2rem}.hero{padding:0 2.5rem 4rem}.vrule{left:2.5rem}
-  .about,.writing,.research,.contact{padding:7rem 2.5rem}
   .about-grid{grid-template-columns:260px 1fr;gap:4rem}
   .rfeat{grid-template-columns:1fr}.rfeat-right{display:none}
   .rfeat-left{border-right:none;border-bottom:1px solid rgba(245,240,232,.07)}
   .contact-inner{grid-template-columns:1fr;gap:3rem}
   .cx-origin,.pulse-ring{display:none}
-  footer{padding:1.5rem 2.5rem}
 }
+
+/* MOBILE */
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}.nlinks{display:none}.hamburger{display:flex}
-  .hero{padding:0 1.5rem 3.5rem}.vrule{left:1.5rem}
+  .heyebrow{margin-bottom:1.5rem}
   .bleeder{font-size:clamp(8rem,40vw,14rem);bottom:-0.08em}
-  .heyebrow{font-size:.48rem;margin-bottom:1.5rem}
-  .hname .ln1,.hname .ln2{font-size:clamp(3.5rem,13vw,6rem)}
-  .htag{font-size:.95rem;margin-top:1.4rem}.hscroll{display:none}
-  #arcCanvas,#dotArcCanvas{display:none}.depth-layer{display:none}
-  .mob-rings{display:flex}
-  .band{padding:.7rem 1.5rem;gap:1.5rem}
-  .about,.writing,.research,.contact{padding:5.5rem 1.5rem}
-  .about-wm{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-num{font-size:4.5rem}
+  .htag{margin-top:1.4rem}.hscroll{display:none}
+  #arcCanvas,#dotArcCanvas,#eegCanvas{display:none}.depth-layer{display:none}
+  .mob-lightning{display:flex}
+  .about-wm{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}
   .rfeat{grid-template-columns:1fr}.rfeat-right{display:none}
   .rfeat-left{border-right:none;border-bottom:1px solid rgba(245,240,232,.07);padding:2rem 1.5rem}
   .rcards{grid-template-columns:1fr}.rcard{padding:2rem 1.5rem}
-  .wpull{margin-left:-1.5rem;padding-left:1.5rem;font-size:clamp(1.3rem,5vw,1.8rem);display:block}
-  .witem{grid-template-columns:1fr;gap:.3rem;padding:1.3rem 0}.wdate{font-size:.48rem}.wtag{text-align:left;margin-top:.1rem}
+  .witem{grid-template-columns:1fr;gap:.3rem;padding:1.3rem 0}.wtag{text-align:left;margin-top:.1rem}
   .contact-inner{grid-template-columns:1fr;gap:2.5rem}.cx-origin,.pulse-ring{display:none}
-  footer{padding:1.5rem;flex-direction:column;align-items:flex-start;gap:.4rem}
+  footer{flex-direction:column;align-items:flex-start;gap:.4rem}
 }
 </style>
 </head>
@@ -257,25 +254,25 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
 <div id="curR"></div>
 
 <div class="drawer" id="drawer" role="dialog" aria-modal="true">
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#writing">Writing</a>
-  <a href="#contact">Contact</a>
+  <a href="about.html">About</a>
+  <a href="research.html">Research</a>
+  <a href="writing.html">Writing</a>
+  <a href="contact.html">Contact</a>
   <a href="reads.html">Recent Reads</a>
   <span class="drawer-foot">elliotcrooks.com</span>
 </div>
 
 <nav id="nav">
-  <a href="#" class="nlogo">Elliot Crooks</a>
+  <a href="index.html" class="nlogo">Elliot Crooks</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nlinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="reads.html" class="reads-link">Recent Reads</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="reads.html" class="reads-link">Reads</a></li>
   </ul>
 </nav>
 
@@ -283,7 +280,11 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
   <div class="depth-layer"></div><div class="depth-layer"></div>
   <div class="depth-layer"></div><div class="depth-layer"></div>
   <div class="depth-layer"></div>
-  <div class="mob-rings"><div class="mob-ring"></div><div class="mob-ring"></div><div class="mob-ring"></div></div>
+  <div class="mob-lightning" aria-hidden="true">
+    <div class="mob-bolt"></div>
+    <div class="mob-bolt"></div>
+    <div class="mob-bolt"></div>
+  </div>
   <div class="starfield" id="starfield" aria-hidden="true"></div>
   <div class="hgrid" aria-hidden="true"></div>
   <div class="vrule" aria-hidden="true"></div>
@@ -313,7 +314,7 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
   <span class="band-text">TMS · ECT · DBS</span><div class="band-sep"></div>
   <span class="band-text">Research</span><div class="band-sep"></div>
   <span class="band-text">Memory</span><div class="band-sep"></div>
-  <span class="band-text">CWRU · NYC</span>
+  <span class="band-text">MGH · McLean</span>
 </div>
 
 <section class="about" id="about">
@@ -326,20 +327,20 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
       <div class="stat-row">
         <div class="stat"><div class="stat-n">MD<span>/</span>PhD</div><div class="stat-l">Dual Degree</div></div>
         <div class="stat"><div class="stat-n">2<span>+</span></div><div class="stat-l">Active Projects</div></div>
-        <div class="stat"><div class="stat-n">NYC<span>*</span></div><div class="stat-l">Target Programs</div></div>
+        <div class="stat"><div class="stat-n">MGH<span>*</span></div><div class="stat-l">Residency</div></div>
         <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Curiosity</div></div>
       </div>
     </div>
     <div class="about-right rv d1">
       <div class="about-body">
         <p>I am a physician-scientist in training at Case Western Reserve University, completing a dual MD/PhD with a focus on neuroscience. My work sits at the intersection of psychiatry, neuromodulation, and the question of what it means to intervene in the human mind.</p>
-        <p>I am pursuing psychiatry residency with an emphasis on interventional approaches — TMS, ECT, and emerging neurostimulation modalities — alongside a deep commitment to psychoanalytic thinking and the relational dimensions of care.</p>
+        <p>I am pursuing psychiatry residency at MGH–McLean Hospital with an emphasis on interventional approaches — TMS, ECT, and emerging neurostimulation modalities — alongside a deep commitment to psychoanalytic thinking and the relational dimensions of care.</p>
         <p>My research examines how targeted electrical and magnetic stimulation can modify memory, mood, and cognition — and what the limits and ethics of those modifications might be.</p>
       </div>
       <div class="about-tags">
         <span class="tag">Psychiatry</span><span class="tag">Neuromodulation</span><span class="tag">Psychoanalysis</span>
         <span class="tag">Memory</span><span class="tag">TMS</span><span class="tag">ECT</span>
-        <span class="tag">DBS</span><span class="tag">CWRU</span><span class="tag">MD/PhD</span>
+        <span class="tag">DBS</span><span class="tag">MGH · McLean</span><span class="tag">MD/PhD</span>
       </div>
     </div>
   </div>
@@ -356,7 +357,7 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
           <div class="rfeat-num">01 — Current · 2024</div>
           <div class="rfeat-title">Neuromodulation &amp; Memory: A Systematic Review</div>
         </div>
-        <a class="rfeat-link" href="#">Read more →</a>
+        <a class="rfeat-link" href="research.html">Read more →</a>
       </div>
       <div class="rfeat-right">
         <div class="rfeat-body">Evaluating the evidence base for neurostimulation interventions — TMS, tDCS, DBS — in modifying declarative and episodic memory across neurological and psychiatric populations. Structured around MDS-UPDRS and RAVLT outcome measures, this review maps a rapidly evolving field at the frontier of therapeutic intervention.</div>
@@ -367,13 +368,13 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
         <div class="rcard-num">02 — Clinical</div>
         <div class="rcard-title">Interventional Psychiatry: The Emerging Frontier</div>
         <div class="rcard-body">How neuromodulation is reshaping treatment-resistant depression, OCD, and PTSD — and what circuit-based therapies look like next.</div>
-        <span class="rcard-link">View →</span>
+        <a href="research.html" class="rcard-link">View →</a>
       </div>
       <div class="rcard"><div class="rcard-bar"></div>
         <div class="rcard-num">03 — Theory</div>
         <div class="rcard-title">The Relational Brain: Psychoanalysis Meets Neuroscience</div>
         <div class="rcard-body">How attachment theory and relational psychoanalysis interface with neurobiological accounts of interpersonal regulation and therapeutic change.</div>
-        <span class="rcard-link">View →</span>
+        <a href="research.html" class="rcard-link">View →</a>
       </div>
     </div>
   </div>
@@ -385,10 +386,10 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
     <h2 class="wtitle rv d1">Selected work<br><em>&amp; thought</em></h2>
     <div class="wpull rv">On minds,<br>methods &amp;<br>the space between.</div>
     <div class="wlist">
-      <a class="witem rv" href="#"><span class="wdate">2024</span><span class="wtxt">On Circuits and Souls: What Neuromodulation Cannot Explain</span><span class="wtag">Essay</span></a>
-      <a class="witem rv d1" href="#"><span class="wdate">2024</span><span class="wtxt">Memory, Identity, and the Ethics of Intervention</span><span class="wtag">Research</span></a>
-      <a class="witem rv d2" href="#"><span class="wdate">2023</span><span class="wtxt">Treatment-Resistant Depression: A Field in Motion</span><span class="wtag">Review</span></a>
-      <a class="witem rv d3" href="#"><span class="wdate">2023</span><span class="wtxt">The Art Basel Gaze: Photography, Perception &amp; the Psychiatric Eye</span><span class="wtag">Essay</span></a>
+      <a class="witem rv" href="writing.html"><span class="wdate">2024</span><span class="wtxt">On Circuits and Souls: What Neuromodulation Cannot Explain</span><span class="wtag">Essay</span></a>
+      <a class="witem rv d1" href="writing.html"><span class="wdate">2024</span><span class="wtxt">Memory, Identity, and the Ethics of Intervention</span><span class="wtag">Research</span></a>
+      <a class="witem rv d2" href="writing.html"><span class="wdate">2023</span><span class="wtxt">Treatment-Resistant Depression: A Field in Motion</span><span class="wtag">Review</span></a>
+      <a class="witem rv d3" href="writing.html"><span class="wdate">2023</span><span class="wtxt">The Art Basel Gaze: Photography, Perception &amp; the Psychiatric Eye</span><span class="wtag">Essay</span></a>
     </div>
   </div>
 </section>
@@ -415,7 +416,7 @@ footer{background:#00060d;padding:2rem 4rem;display:flex;justify-content:space-b
 
 <footer>
   <span class="fl"><span class="fl-mark">◆</span>Elliot Crooks — elliotcrooks.com</span>
-  <span class="fl">© 2025</span>
+  <span class="fl">© 2026</span>
 </footer>
 
 <script>
@@ -456,16 +457,16 @@ if(matchMedia('(pointer:fine)').matches){
 }
 
 /* HAMBURGER */
-const btn2=document.getElementById('hamburger'),drawer=document.getElementById('drawer');
-function toggleMenu(o){btn2.classList.toggle('open',o);drawer.classList.toggle('open',o);btn2.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}
-btn2.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));
+const hbtn=document.getElementById('hamburger'),drawer=document.getElementById('drawer');
+function toggleMenu(o){hbtn.classList.toggle('open',o);drawer.classList.toggle('open',o);hbtn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}
+hbtn.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleMenu(false)});
 
-/* NAV */
+/* NAV SCROLL */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60),{passive:true});
 
-/* MOBILE */
+/* MOBILE DETECTION */
 const isMob=window.innerWidth<=768||!matchMedia('(pointer:fine)').matches;
 
 /* STARFIELD */
@@ -481,7 +482,7 @@ if(!isMob){
   }
 }
 
-/* EEG */
+/* EEG CANVAS */
 const eeg=document.getElementById('eegCanvas'),ec=eeg.getContext('2d');
 function rEEG(){eeg.width=eeg.offsetWidth;eeg.height=eeg.offsetHeight}
 rEEG();window.addEventListener('resize',rEEG,{passive:true});
@@ -551,12 +552,14 @@ if(!isMob){
   drawArcs();
 }
 
-/* DOT ARCS — thick crimson bolts from the red dot rightward, 3+ per second */
+/* DOT ARCS — spec-compliant: thin (0.8–1.5px), one at a time, 330ms cadence, tapering jitter, no glow */
 if(!isMob){
   const dotCanvas=document.getElementById('dotArcCanvas');
   const dc=dotCanvas.getContext('2d');
   function rDot(){dotCanvas.width=dotCanvas.offsetWidth;dotCanvas.height=dotCanvas.offsetHeight}
-  rDot();window.addEventListener('resize',()=>{rDot();updateDotPos()},{passive:true});
+  rDot();
+  window.addEventListener('resize',()=>{rDot();updateDotPos();},{passive:true});
+  window.addEventListener('scroll',updateDotPos,{passive:true});
 
   let dotX=0,dotY=0;
   function updateDotPos(){
@@ -567,70 +570,64 @@ if(!isMob){
     dotX=rect.left+rect.width/2-heroRect.left;
     dotY=rect.top+rect.height/2-heroRect.top;
   }
-  // wait for name animation then lock position
-  setTimeout(()=>{updateDotPos();},1600);
-  window.addEventListener('scroll',updateDotPos,{passive:true});
+  setTimeout(updateDotPos,1600);
 
-  const dotArcs=[];
-  function spawnDotArc(){
+  let currentArc=null;
+  let lastSpawnTime=-1000;
+
+  function spawnDotArc(now){
     if(dotX===0&&dotY===0)return;
-    // angle biased rightward: between -50deg and +50deg from horizontal
-    const ang=(Math.random()-.5)*1.0; // radians, centered on 0 = right
-    const len=120+Math.random()*220;
-    const segs=5+Math.floor(Math.random()*5);
-    dotArcs.push({
-      x1:dotX,y1:dotY,
-      x2:dotX+Math.cos(ang)*len,
-      y2:dotY+Math.sin(ang)*len,
-      segs,life:0,maxLife:8+Math.random()*7,
-      width:2.5+Math.random()*3.5
-    });
+    // Direction: rightward, ±50° from horizontal
+    const ang=(Math.random()-.5)*(100*Math.PI/180);
+    const len=80+Math.random()*200;            // 80–280px
+    const segs=6+Math.floor(Math.random()*5); // 6–10 segments
+    const maxLife=6+Math.floor(Math.random()*5); // 6–10 frames
+    currentArc={
+      ang,len,segs,
+      life:0,maxLife,
+      width:0.8+Math.random()*0.7             // 0.8–1.5px
+    };
+    lastSpawnTime=now;
   }
 
-  // spawn at 3-4 per second
-  setInterval(spawnDotArc,280);
-  setInterval(spawnDotArc,330);
-  setInterval(spawnDotArc,400);
-
-  function drawDotArcs(){
+  function drawDotArcs(now){
     dc.clearRect(0,0,dotCanvas.width,dotCanvas.height);
-    for(let i=dotArcs.length-1;i>=0;i--){
-      const a=dotArcs[i];a.life++;
-      const p=a.life/a.maxLife;
-      // sharp flash: fast rise, quick decay
-      const alpha=p<.2?p/.2:Math.pow(1-p,.8);
-      if(alpha<=0){dotArcs.splice(i,1);continue}
+
+    // One at a time: spawn only when previous is done AND ≥330ms since last spawn
+    const arcDone=!currentArc||currentArc.life>=currentArc.maxLife;
+    if(arcDone&&(now-lastSpawnTime)>=330){
+      spawnDotArc(now);
+    }
+
+    if(currentArc&&currentArc.life<currentArc.maxLife){
+      currentArc.life++;
+      const p=currentArc.life/currentArc.maxLife;
+      // Sharp flash: full at frame 1, fast decay
+      const alpha=currentArc.life===1?1.0:Math.pow(1-p,1.5);
+      const a=currentArc;
 
       dc.beginPath();
-      let cx=a.x1,cy=a.y1;
-      const dx=(a.x2-a.x1)/a.segs,dy=(a.y2-a.y1)/a.segs;
+      let cx=dotX,cy=dotY;
+      const segDX=Math.cos(a.ang)*a.len/a.segs;
+      const segDY=Math.sin(a.ang)*a.len/a.segs;
       dc.moveTo(cx,cy);
       for(let s=0;s<a.segs;s++){
-        const j=22*(1-p);
-        cx+=dx+(Math.random()-.5)*j;
-        cy+=dy+(Math.random()-.5)*j;
+        // Jitter tapers from high at origin to zero at tip
+        const t=s/(a.segs-1||1);
+        const jitter=32*(1-t);
+        cx+=segDX+(Math.random()-.5)*jitter;
+        cy+=segDY+(Math.random()-.5)*jitter;
         dc.lineTo(cx,cy);
       }
-      // glow effect: draw wide dim then narrow bright
-      dc.strokeStyle=`rgba(148,0,0,${alpha*.25})`;
-      dc.lineWidth=a.width*3.5;
-      dc.stroke();
-      dc.beginPath();
-      dc.moveTo(a.x1,a.y1);
-      cx=a.x1;cy=a.y1;
-      for(let s=0;s<a.segs;s++){
-        const j=22*(1-p);
-        cx+=dx+(Math.random()-.5)*j;
-        cy+=dy+(Math.random()-.5)*j;
-        dc.lineTo(cx,cy);
-      }
-      dc.strokeStyle=`rgba(200,20,20,${alpha*.85})`;
+      // No glow — single thin stroke only
+      dc.strokeStyle=`rgba(200,20,20,${alpha})`;
       dc.lineWidth=a.width;
       dc.stroke();
     }
+
     requestAnimationFrame(drawDotArcs);
   }
-  drawDotArcs();
+  requestAnimationFrame(drawDotArcs);
 }
 
 /* ELECTRODE NODES */
@@ -661,7 +658,7 @@ if(!isMob){
   })});
 }
 
-/* REVEAL */
+/* REVEAL ON SCROLL */
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
